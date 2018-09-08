@@ -25,6 +25,7 @@
       <forward name="loginFail" path="/jsp/loginFail.jsp" />
       
       
+      
     </action>
     <action
       attribute="registerForm"

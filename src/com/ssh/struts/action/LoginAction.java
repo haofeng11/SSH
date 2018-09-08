@@ -49,7 +49,7 @@ public class LoginAction extends Action {
         User instance = new User();
         instance.setUsername(username);
         instance.setPassword(password);
-        UserDAO userDAO = (UserDAO)Global.getDAO("UserDAO");
+        UserDAO userDAO = (UserDAO)Global.getDAO(UserDAO.TAG);
         List<?> list = userDAO.findByExample(instance);
        
         //如果用户存在,则登录成功。

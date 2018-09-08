@@ -20,6 +20,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  */
 public class UserDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(UserDAO.class);
+	public static final String TAG = "UserDAO";
 	// property constants
 	public static final String USERNAME = "username";
 	public static final String PASSWORD = "password";

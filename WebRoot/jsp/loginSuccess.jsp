@@ -23,8 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    登录成功.
-    asfdasdfasf <br>
+    <h1>登录成功!</h1><br>
     <%=request.getAttribute("message")%><br>
   </body>
 </html>
