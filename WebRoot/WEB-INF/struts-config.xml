@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="loginForm" type="com.ssh.struts.form.LoginForm" />
+    <form-bean name="registerForm" type="com.ssh.struts.form.RegisterForm" />
+    
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="loginForm"
+      input="/jsp/login.jsp"
+      name="loginForm"
+      path="/login"
+      scope="request"
+      type="com.ssh.struts.action.LoginAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="loginSuccess" path="/jsp/loginSuccess.jsp" />
+      <forward name="loginFail" path="/jsp/loginFail.jsp" />
+      
+      
+    </action>
+    <action
+      attribute="registerForm"
+      input="/jsp/register.jsp"
+      name="registerForm"
+      path="/register"
+      scope="request"
+      type="com.ssh.struts.action.RegisterAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="registerSuccess" path="/jsp/login.jsp" />
+      <forward name="registerFail" path="/jsp/register.jsp" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.ssh.struts.ApplicationResources" />
+</struts-config>
+
