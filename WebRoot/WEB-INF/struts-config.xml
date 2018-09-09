@@ -6,6 +6,7 @@
   <form-beans >
     <form-bean name="loginForm" type="com.ssh.struts.form.LoginForm" />
     <form-bean name="registerForm" type="com.ssh.struts.form.RegisterForm" />
+    <form-bean name="searchForm" type="com.ssh.struts.form.SearchForm" />
     
 
   </form-beans>
@@ -21,7 +22,7 @@
       scope="request"
       type="com.ssh.struts.action.LoginAction">
       <set-property property="cancellable" value="true" />
-      <forward name="loginSuccess" path="/jsp/loginSuccess.jsp" />
+      <forward name="loginSuccess" path="/jsp/home.jsp" />
       <forward name="loginFail" path="/jsp/loginFail.jsp" />
       
       
@@ -37,6 +38,16 @@
       <set-property property="cancellable" value="true" />
       <forward name="registerSuccess" path="/jsp/login.jsp" />
       <forward name="registerFail" path="/jsp/register.jsp" />
+    </action>
+    <action
+      attribute="searchForm"
+      input="/form/search.jsp"
+      name="searchForm"
+      path="/search"
+      scope="request"
+      type="com.ssh.struts.action.SearchAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="searchSuccess" path="/jsp/search.jsp" />
     </action>
 
   </action-mappings>
