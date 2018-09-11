@@ -53,15 +53,16 @@ public class AddAction extends Action {
         CitizenDAO citizenDAO = (CitizenDAO)Global.getDAO("CitizenDAO");
         List<?> list = citizenDAO.findByExample(instance);
        
-        //如果用户存在,则登录成功。
-        if(list.size() > 0){
-            
-            //写入提示信息
-            request.setAttribute("message", "该记录已经被注册" );
-            return mapping.findForward("addFail");
-        }
-        citizenDAO.save(instance);
-        request.setAttribute("message", "新增成功:");
-        return mapping.findForward("addSuccess");
+        try {
+        	if(list.size() > 0){
+            	response.getWriter().write("Add record unsuccessfully!The record has existed!");
+            } else {
+            	citizenDAO.save(instance);
+            	response.getWriter().write("Add record successfully!");
+            }
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+        return null;
 	}
 }

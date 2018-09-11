@@ -7,14 +7,60 @@
 		<title>JSP for AddForm form</title>
 	</head>
 	<body>
-		<html:form action="/add">
-			id : <html:text property="id"/><html:errors property="id"/><br/>
-			danyuanNum : <html:text property="danyuanNum"/><html:errors property="danyuanNum"/><br/>
-			photoURL : <html:text property="photoURL"/><html:errors property="photoURL"/><br/>
-			location : <html:text property="location"/><html:errors property="location"/><br/>
-			name : <html:text property="name"/><html:errors property="name"/><br/>
-			<html:submit value="新增"/><html:cancel value="取消"/>
-		</html:form>
+		<div class="form-group">
+    		<label for="danyuanNum">danyuanNum:&nbsp&nbsp</label>
+    		<input type="text" class="form-control" id="danyuanNum">
+  		</div>
+  		<br/><br/>
+  		<div class="form-group">
+    		<label for="location">location:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+    		<input type="text" class="form-control" id="location">
+  		</div>
+  		<br/><br/>
+  		<div class="form-group">
+    		<label for="name">name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+    		<input type="text" class="form-control" id="name">
+  		</div>
+  		<br/><br/>
+  		<div class="form-group">
+    		<label for="photoURL">photoURL:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+    		<input type="file" id="photoURL">
+  		</div>
+  		<br/><br/>
+  		<input class="btn btn-default" type="button" value="Save" onclick="save()">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		<input class="btn btn-default" type="button" value="Back" onclick="back()">
+  		
+    	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	
+    	<script>
+    		function save() {
+    			var reader = new FileReader();
+	            reader.readAsDataURL($("#photoURL")[0].files[0]);
+	            reader.onload = function (evt) {
+	                var fileString = evt.target.result;
+	                $.ajax({
+	    				url: "/SSH/add.do",
+	    				type: "POST",
+	    				dataType: "text",
+	    				data: {
+	    					danyuanNum: $("#danyuanNum").val(),
+	    					location: $("#location").val(),
+	    					name: $("#name").val(),
+	    					photoURL: fileString
+	    				},
+	    				success: function(result) {
+	    					alert(result);
+	    					window.location.href="home.jsp";
+	    				}
+	    			})
+	            }
+    		}
+    		
+    		function back() {
+    			window.location.href="home.jsp";
+    		}
+    	</script>
 	</body>
 </html>
 
