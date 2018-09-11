@@ -10,10 +10,10 @@ public abstract class AbstractCitizen implements java.io.Serializable {
 	// Fields
 
 	private Long id;
-	private String username;
-	private String idNum;
-	private String idCardUrl;
-	private String housedeedUrl;
+	private Long danyuanNum;
+	private String location;
+	private String name;
+	private String photoUrl;
 
 	// Constructors
 
@@ -22,11 +22,12 @@ public abstract class AbstractCitizen implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractCitizen(String username, String idNum, String idCardUrl, String housedeedUrl) {
-		this.username = username;
-		this.idNum = idNum;
-		this.idCardUrl = idCardUrl;
-		this.housedeedUrl = housedeedUrl;
+	public AbstractCitizen(Long danyuanNum, String location, String name,
+			String photoUrl) {
+		this.danyuanNum = danyuanNum;
+		this.location = location;
+		this.name = name;
+		this.photoUrl = photoUrl;
 	}
 
 	// Property accessors
@@ -39,36 +40,36 @@ public abstract class AbstractCitizen implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return this.username;
+	public Long getDanyuanNum() {
+		return this.danyuanNum;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setDanyuanNum(Long danyuanNum) {
+		this.danyuanNum = danyuanNum;
 	}
 
-	public String getIdNum() {
-		return this.idNum;
+	public String getLocation() {
+		return this.location;
 	}
 
-	public void setIdNum(String idNum) {
-		this.idNum = idNum;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
-	public String getIdCardUrl() {
-		return this.idCardUrl;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setIdCardUrl(String idCardUrl) {
-		this.idCardUrl = idCardUrl;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getHousedeedUrl() {
-		return this.housedeedUrl;
+	public String getPhotoUrl() {
+		return this.photoUrl;
 	}
 
-	public void setHousedeedUrl(String housedeedUrl) {
-		this.housedeedUrl = housedeedUrl;
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
 	}
 
 }

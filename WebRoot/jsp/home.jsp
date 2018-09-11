@@ -44,6 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <%=request.getAttribute("message")%><br>
   	<div class="centerGroup">
     	<a href="jsp/search.jsp" class="btn btn-primary btn-lg active" role="button">查询信息</a>
     	<a href="jsp/addRecord.jsp" class="btn btn-primary btn-lg active" role="button">新增记录</a>

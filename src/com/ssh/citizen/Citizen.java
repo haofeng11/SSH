@@ -12,8 +12,9 @@ public class Citizen extends AbstractCitizen implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Citizen(String username, String idNum, String idCardUrl, String housedeedUrl) {
-		super(username, idNum, idCardUrl, housedeedUrl);
+	public Citizen(Long danyuanNum, String location, String name,
+			String photoUrl) {
+		super(danyuanNum, location, name, photoUrl);
 	}
 
 }

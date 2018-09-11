@@ -20,12 +20,11 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  */
 public class CitizenDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(CitizenDAO.class);
-	public static final String TAG = "CitizenDAO";
 	// property constants
-	public static final String USERNAME = "username";
-	public static final String ID_NUM = "idNum";
-	public static final String ID_CARD_URL = "idCardUrl";
-	public static final String HOUSEDEED_URL = "housedeedUrl";
+	public static final String DANYUAN_NUM = "danyuanNum";
+	public static final String LOCATION = "location";
+	public static final String NAME = "name";
+	public static final String PHOTO_URL = "photoUrl";
 
 	protected void initDao() {
 		// do nothing
@@ -56,7 +55,8 @@ public class CitizenDAO extends HibernateDaoSupport {
 	public Citizen findById(java.lang.Long id) {
 		log.debug("getting Citizen instance with id: " + id);
 		try {
-			Citizen instance = (Citizen) getHibernateTemplate().get("com.ssh.citizen.Citizen", id);
+			Citizen instance = (Citizen) getHibernateTemplate().get(
+					"com.ssh.citizen.Citizen", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -68,7 +68,8 @@ public class CitizenDAO extends HibernateDaoSupport {
 		log.debug("finding Citizen instance by example");
 		try {
 			List results = getHibernateTemplate().findByExample(instance);
-			log.debug("find by example successful, result size: " + results.size());
+			log.debug("find by example successful, result size: "
+					+ results.size());
 			return results;
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
@@ -77,9 +78,11 @@ public class CitizenDAO extends HibernateDaoSupport {
 	}
 
 	public List findByProperty(String propertyName, Object value) {
-		log.debug("finding Citizen instance with property: " + propertyName + ", value: " + value);
+		log.debug("finding Citizen instance with property: " + propertyName
+				+ ", value: " + value);
 		try {
-			String queryString = "from Citizen as model where model." + propertyName + "= ?";
+			String queryString = "from Citizen as model where model."
+					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
@@ -87,20 +90,20 @@ public class CitizenDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByUsername(Object username) {
-		return findByProperty(USERNAME, username);
+	public List findByDanyuanNum(Object danyuanNum) {
+		return findByProperty(DANYUAN_NUM, danyuanNum);
 	}
 
-	public List findByIdNum(Object idNum) {
-		return findByProperty(ID_NUM, idNum);
+	public List findByLocation(Object location) {
+		return findByProperty(LOCATION, location);
 	}
 
-	public List findByIdCardUrl(Object idCardUrl) {
-		return findByProperty(ID_CARD_URL, idCardUrl);
+	public List findByName(Object name) {
+		return findByProperty(NAME, name);
 	}
 
-	public List findByHousedeedUrl(Object housedeedUrl) {
-		return findByProperty(HOUSEDEED_URL, housedeedUrl);
+	public List findByPhotoUrl(Object photoUrl) {
+		return findByProperty(PHOTO_URL, photoUrl);
 	}
 
 	public List findAll() {
@@ -117,7 +120,8 @@ public class CitizenDAO extends HibernateDaoSupport {
 	public Citizen merge(Citizen detachedInstance) {
 		log.debug("merging Citizen instance");
 		try {
-			Citizen result = (Citizen) getHibernateTemplate().merge(detachedInstance);
+			Citizen result = (Citizen) getHibernateTemplate().merge(
+					detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {

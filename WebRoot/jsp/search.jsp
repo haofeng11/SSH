@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<form class="navbar-form" role="search">
 		<div class="centerGroup">
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="姓名或身份证号">
+				<input type="text" class="form-control" placeholder="姓名或不动产单元号或坐落">
 			</div>
 			<button type="submit" class="btn btn-default">搜索</button>
 			<button type="reset" class="btn btn-default">取消</button>
