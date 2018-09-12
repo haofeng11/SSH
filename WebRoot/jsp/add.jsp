@@ -56,6 +56,7 @@
 		</script>
     </head>
 	<body>
+	<div class="mycenter" >
 		<div class="form-group" align="center">
     		<label for="danyuanNum" align="center">单元号:</label>
     	    <input type="text" class="form-control" id="danyuanNum" style="width:200px">
@@ -79,6 +80,7 @@
   		<div class="form-group" align="center">
   		<input class="btn btn-default" type="button" value="保存" onclick="save()" >
   		<input class="btn btn-default" type="button" value="返回" onclick="back()"  >
+  		</div>
   		</div>
   		
     	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
