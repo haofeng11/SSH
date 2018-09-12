@@ -40,6 +40,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             padding-left: 5%;
             padding-right: 5%;
     	}
+    	body{background: url(../img/bkg.jpg) no-repeat;background-size:cover;font-size: 16px;}  
+            .form{background: rgba(255,255,255,0.2);width:400px;margin:100px auto;}  
     </style>
     	
   </head>
