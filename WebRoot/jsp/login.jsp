@@ -40,7 +40,7 @@
             margin-left: 10%;
             margin-right: 10%;
         }
-        body{background: url(../img/bkg.jpg) no-repeat;background-size:cover;font-size: 16px;}  
+        body{background: url(img/bkg.jpg) no-repeat;background-size:cover;font-size: 16px;}  
             .form{background: rgba(255,255,255,0.2);width:400px;margin:100px auto;}  
             #login_form{display: block;}  
             #register_form{display: none;}  

@@ -42,17 +42,17 @@ public class SearchAction extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
-		SearchForm searchForm = (SearchForm) form;// TODO Auto-generated method stub
-		String searchStr = searchForm.getSearchStr();
-		Citizen instance = new Citizen();
-		instance.setId(Long.parseLong(searchStr));
-		CitizenDAO citizenDAO = (CitizenDAO) Global.getDAO(CitizenDAO.TAG);
-		List<?> list = citizenDAO.findByIdNum(searchStr);
-		if (null == list || 0 == list.size()) {
-			request.setAttribute("error", "未搜索到结果，请核实身份证号码！");
-			return null;
-		}
-		request.setAttribute("result", list);
+//		SearchForm searchForm = (SearchForm) form;// TODO Auto-generated method stub
+//		String searchStr = searchForm.getSearchStr();
+//		Citizen instance = new Citizen();
+//		instance.setId(Long.parseLong(searchStr));
+//		CitizenDAO citizenDAO = (CitizenDAO) Global.getDAO(CitizenDAO.TAG);
+//		List<?> list = citizenDAO.findByIdNum(searchStr);
+//		if (null == list || 0 == list.size()) {
+//			request.setAttribute("error", "未搜索到结果，请核实身份证号码！");
+//			return null;
+//		}
+//		request.setAttribute("result", list);
 		return mapping.findForward("searchSuccess");
 	}
 }

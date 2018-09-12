@@ -34,11 +34,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             margin-left: auto;
             margin-right: auto;
             height: 350px;
-            width: 500px;
+            width: 800px;
             padding: 5%;
             padding-left: 5%;
             padding-right: 5%;
     	}
+    	.buttonNav{
+    		width:220px;
+    		height:250px;
+    		margin-left: 5%;
+            margin-right: 5%;
+            padding-top:110px
+    	}
+    	h2{
+    		margin-bottom: 50px;
+    		margin-left: 90px;
+    	}
+    	body{background: url(img/bkg.jpg) no-repeat;background-size:cover;font-size: 16px;}
     </style>
 
   </head>
@@ -46,8 +58,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <%=request.getAttribute("message")%><br>
   	<div class="centerGroup">
-    	<a href="jsp/search.jsp" class="btn btn-primary btn-lg active" role="button">查询信息</a>
-    	<a href="jsp/addRecord.jsp" class="btn btn-primary btn-lg active" role="button">新增记录</a>
+  		<h2>欢迎使用故土资源局信息系统</h2>
+    	<a href="jsp/search.jsp" class="btn btn-primary btn-lg active buttonNav" role="button">查询信息</a>
+    	<a href="jsp/add.jsp" class="btn btn-primary btn-lg active buttonNav" role="button">新增记录</a>
     </div>
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>

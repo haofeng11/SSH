@@ -22,8 +22,7 @@ public abstract class AbstractCitizen implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractCitizen(Long danyuanNum, String location, String name,
-			String photoUrl) {
+	public AbstractCitizen(Long danyuanNum, String location, String name, String photoUrl) {
 		this.danyuanNum = danyuanNum;
 		this.location = location;
 		this.name = name;

@@ -34,26 +34,89 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	 	margin-top: 50px;
             margin-left: auto;
             margin-right: auto;
-            height: 350px;
             width: 500px;
-            padding: 5%;
             padding-left: 5%;
             padding-right: 5%;
     	}
+    	.form-control{
+    		margin-bottom: 5dp;
+    	}
+    	button{
+    		margin-left:60px;
+    	}
+    	img{
+    	width:300px;
+    	height:200px;
+    	}
+    	body{background: url(img/bkg.jpg) no-repeat;background-size:cover;font-size: 16px;}
+    	input{margin-bottom:10px;}
     </style>
     	
+    	<script type="text/javascript">
+    	function onSearch() {
+        $.ajax({  
+         url: "/SSH/getCitizen.do",
+         type : 'POST',
+         dataType: "text",  
+         data : {  
+          danyuan : $("#danyuan").val().trim(),
+          location : $("#location").val().trim(),
+          name : $("#name").val().trim() 
+         },  
+         success : function(data) {  
+          var result = JSON.parse(data);
+          var trStr = '';//动态拼接table  
+          for(var i in result) {
+          	var danyuanR = result[i].danyuan+"";
+          	var locationR = result[i].location;
+          	var nameR = result[i].name;
+          	trStr += '<tr class="example">';//拼接处规范的表格形式
+ 			trStr += '<td width="15%" id="user">' + danyuanR + '</td>';//数据表的主键值
+ 			trStr += '<td width="15%">' + locationR + '</td>';//对应数组表的字段值
+ 			trStr += '<td width="15%">' + nameR + '</td>';
+ 			trStr += '<td width="35%"> <img src="' + result[i].imageURL + '" /></td>';
+ 			/*经典之处，要将主键对应的值以json的形式进行传递，才能在后台使用*/
+ 			trStr += '</tr>';  
+ 			} 
+ 			$("#tbody").html(trStr);//运用html方法将拼接的table添加到tbody中return;
+           
+         },
+         error: function(err) {  
+    		alert(err);   
+  			}  
+        });
+        };
+	</script>
   </head>
   
   <body>
-	<form class="navbar-form" role="search">
+	<div name="searchForm">
 		<div class="centerGroup">
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="姓名或不动产单元号或坐落">
+				<input type="text" id="danyuan" class="form-control" placeholder="单元号">
+				<input type="text" id="location" class="form-control" placeholder="地址">
+				<input type="text" id="name" class="form-control" placeholder="姓名">
 			</div>
-			<button type="submit" class="btn btn-default">搜索</button>
-			<button type="reset" class="btn btn-default">取消</button>
+			<button class="btn btn-primary col-sm-3" onclick="onSearch()">搜索</button>
+			<button class="btn btn-primary col-sm-3" type="reset">取消</button>
 		</div>
-	</form>
+	</div>
+	
+	<div class="centerGroup" style="width:1000px; padding-left:15%; margin-top:150px">
+		<table class="table">
+		<thead>
+ 		<tr>
+ 		<th>单元号</th>
+ 		<th>地址</th>
+ 		<th>姓名</th>
+ 		<th width="35%">附件照片</th>
+ 		</tr>
+ 		</thead>
+ 		<tbody id="tbody">
+ 		</tbody>
+		</table>
+	</div>
+	
 
 	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>

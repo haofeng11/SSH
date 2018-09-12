@@ -12,9 +12,17 @@ public class Citizen extends AbstractCitizen implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Citizen(Long danyuanNum, String location, String name,
-			String photoUrl) {
+	public Citizen(Long danyuanNum, String location, String name, String photoUrl) {
 		super(danyuanNum, location, name, photoUrl);
+	}
+	
+	public boolean sameCittizen(Citizen compare) {
+		if (this.getDanyuanNum() == compare.getDanyuanNum() && this.getLocation().equals(compare.getLocation()) &&
+				this.getName().equals(compare.getName())) {
+			return true;
+		}
+		
+		return false;
 	}
 
 }

@@ -21,8 +21,13 @@ public class SearchForm extends ActionForm {
 	 * Generated fields
 	 */
 
-	/** searchStr property */
-	private String searchStr;
+	/** danyuan property */
+	private String danyuan;
+	/** location property */
+	private String location;
+	/** name property */
+	private String name;
+	
 	/*
 	 * Generated Methods
 	 */
@@ -47,19 +52,29 @@ public class SearchForm extends ActionForm {
 		// TODO Auto-generated method stub
 	}
 
-	/** 
-	 * Returns the searchStr.
-	 * @return String
-	 */
-	public String getSearchStr() {
-		return searchStr;
+	public String getDanyuan() {
+		return danyuan;
 	}
 
-	/** 
-	 * Set the searchStr.
-	 * @param searchStr The searchStr to set
-	 */
-	public void setSearchStr(String searchStr) {
-		this.searchStr = searchStr;
+	public void setDanyuan(String danyuan) {
+		this.danyuan = danyuan;
 	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
 }

@@ -20,6 +20,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  */
 public class CitizenDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(CitizenDAO.class);
+	public static final String TAG = "CitizenDAO";
 	// property constants
 	public static final String DANYUAN_NUM = "danyuanNum";
 	public static final String LOCATION = "location";

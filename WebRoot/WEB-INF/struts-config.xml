@@ -40,7 +40,7 @@
       <forward name="registerSuccess" path="/jsp/login.jsp" />
       <forward name="registerFail" path="/jsp/register.jsp" />
     </action>
-    <action
+    <!-- <action
       attribute="searchForm"
       input="/form/search.jsp"
       name="searchForm"
@@ -48,7 +48,10 @@
       scope="request"
       type="com.ssh.struts.action.SearchAction">
       <set-property property="cancellable" value="true" />
-      <forward name="searchSuccess" path="/jsp/search.jsp" />
+    </action> -->
+    <action path="/getCitizen" type="com.ssh.struts.action.GetCitizenAction"
+    >
+      <set-property property="cancellable" value="true" />
     </action>
     <action
       attribute="addForm"

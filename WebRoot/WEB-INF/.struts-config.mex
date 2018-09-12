@@ -2,11 +2,16 @@
 <FlowViewLayout Version="1.2">
   <StrutsActivity path="/login.do" location="465,45" dimension="233,104" />
   <StrutsActivity path="/register.do" location="50,250" dimension="249,104" />
+<<<<<<< Updated upstream
   <StrutsActivity path="/search.do" location="765,330" dimension="227,88" />
+=======
+  <StrutsActivity path="/jsp/home.jsp" location="525,255" dimension="101,49" />
+>>>>>>> Stashed changes
   <StrutsActivity path="/jsp/loginFail.jsp" location="950,50" dimension="127,53" />
   <StrutsActivity path="/jsp/home.jsp" location="525,255" dimension="101,49" />
   <StrutsActivity path="/jsp/login.jsp" location="225,45" dimension="108,53" />
   <StrutsActivity path="/jsp/register.jsp" location="15,45" dimension="124,53" />
+<<<<<<< Updated upstream
   <StrutsActivity path="/jsp/search.jsp" location="350,250" dimension="117,53" />
   <StrutsActivity path="/form/search.jsp" location="750,150" dimension="116,49" />
   <StrutsActivity path="/add.do" location="50,450" dimension="225,104" />
@@ -18,11 +23,24 @@
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/search.do,searchSuccess,/jsp/search.jsp,1" routingType="0">
+=======
+  <StrutsActivity path="/form/search.jsp" location="750,150" dimension="116,49" />
+  <StrutsActivity path="/jsp/search.jsp" location="350,250" dimension="107,49" />
+  <StrutsActivity path="/getCitizen.do" location="950,250" dimension="244,88" />
+  <StrutsTransition id="/register.do,registerFail,/jsp/register.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="77,250" />
+      <AbsolutePoint location="77,98" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,loginSuccess,/jsp/home.jsp,1" routingType="0">
+>>>>>>> Stashed changes
     <AutomaticBendpoints>
       <AbsolutePoint location="878,374" />
       <AbsolutePoint location="0,0" />
     </AutomaticBendpoints>
   </StrutsTransition>
+<<<<<<< Updated upstream
   <StrutsTransition id="/add.do,addFail,/jsp/add.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="275,518" />
@@ -31,6 +49,9 @@
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/jsp/add.jsp,null,/add.do,2" routingType="0">
+=======
+  <StrutsTransition id="/jsp/register.jsp,null,/register.do,2" routingType="0">
+>>>>>>> Stashed changes
     <AutomaticBendpoints>
       <AbsolutePoint location="350,476" />
       <AbsolutePoint location="275,476" />
@@ -61,6 +82,7 @@
       <AbsolutePoint location="465,71" />
     </AutomaticBendpoints>
   </StrutsTransition>
+<<<<<<< Updated upstream
   <StrutsTransition id="/jsp/register.jsp,null,/register.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="107,98" />
@@ -79,5 +101,7 @@
       <AbsolutePoint location="575,255" />
     </AutomaticBendpoints>
   </StrutsTransition>
+=======
+>>>>>>> Stashed changes
 </FlowViewLayout>
 
