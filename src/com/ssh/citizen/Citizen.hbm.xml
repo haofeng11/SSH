@@ -10,7 +10,7 @@
             <column name="id" />
             <generator class="native" />
         </id>
-        <property name="danyuanNum" type="java.lang.Long">
+        <property name="danyuanNum" type="java.lang.String">
             <column name="danyuanNum" not-null="true">
                 <comment>不动产单元号</comment>
             </column>

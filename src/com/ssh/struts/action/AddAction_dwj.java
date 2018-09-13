@@ -80,7 +80,7 @@ public class AddAction_dwj extends Action {
 		
 		
 		Citizen instance = new Citizen();
-		instance.setDanyuanNum(Long.valueOf(danyuanNum));
+		instance.setDanyuanNum(danyuanNum);
         instance.setLocation(location);
         instance.setName(name);
         instance.setPhotoUrl(photoURL);

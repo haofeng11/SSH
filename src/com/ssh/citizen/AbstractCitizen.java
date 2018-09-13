@@ -10,7 +10,7 @@ public abstract class AbstractCitizen implements java.io.Serializable {
 	// Fields
 
 	private Long id;
-	private Long danyuanNum;
+	private String danyuanNum;
 	private String location;
 	private String name;
 	private String photoUrl;
@@ -22,7 +22,7 @@ public abstract class AbstractCitizen implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractCitizen(Long danyuanNum, String location, String name, String photoUrl) {
+	public AbstractCitizen(String danyuanNum, String location, String name, String photoUrl) {
 		this.danyuanNum = danyuanNum;
 		this.location = location;
 		this.name = name;
@@ -39,11 +39,11 @@ public abstract class AbstractCitizen implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Long getDanyuanNum() {
+	public String getDanyuanNum() {
 		return this.danyuanNum;
 	}
 
-	public void setDanyuanNum(Long danyuanNum) {
+	public void setDanyuanNum(String danyuanNum) {
 		this.danyuanNum = danyuanNum;
 	}
 

@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   
   	<div class="centerGroup">
-  		<h2>欢迎使用故土资源局信息系统</h2>
+  		<h2>欢迎使用国土资源局信息系统</h2>
     	<a href="jsp/search.jsp" class="btn btn-primary btn-lg active buttonNav" role="button">查询信息</a>
     	<a href="jsp/add.jsp" class="btn btn-primary btn-lg active buttonNav" role="button">新增记录</a>
     </div>

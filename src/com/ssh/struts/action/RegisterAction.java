@@ -49,7 +49,9 @@ public class RegisterAction extends Action {
 	       
 	        //检查用户名是否已被注册
 	        UserDAO userDAO = (UserDAO)Global.getDAO("UserDAO");
-	        List<?> list = userDAO.findByUsername(username);
+	        User instance = new User();
+	        instance.setUsername(username);
+	        List<?> list = userDAO.findByExample(instance);
 	       
 	        //用户名已被注册，返回注册页面
 	        if(list.size() > 0){

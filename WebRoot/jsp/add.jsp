@@ -102,7 +102,6 @@
 	    					photoURL: fileString
 	    				},
 	    				success: function(result) {
-	    					alert(result);
 	    					window.location.href="home.jsp";
 	    				}
 	    			})

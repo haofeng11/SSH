@@ -41,12 +41,12 @@ public class AddAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		AddForm addForm = (AddForm) form;// TODO Auto-generated method stub
-		String danyuanNum = addForm.getDanyuanNum();
-		String location = addForm.getLocation();
-		String name = addForm.getName();
-		String photoURL = addForm.getPhotoURL();
+		String danyuanNum = request.getParameter("danyuanNum");
+		String location = request.getParameter("location");
+		String name = request.getParameter("name");
+		String photoURL = request.getParameter("photoURL");
 		Citizen instance = new Citizen();
-		instance.setDanyuanNum(Long.valueOf(danyuanNum));
+		instance.setDanyuanNum(danyuanNum);
         instance.setLocation(location);
         instance.setName(name);
         instance.setPhotoUrl(photoURL);

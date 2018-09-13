@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           var result = JSON.parse(data);
           var trStr = '';//动态拼接table
           var errorHint = result.error;  
-          if(typeof(errorHint) != undefined){
+          if(errorHint != undefined){
           	alert("没有搜索到符合条件的信息，请重新搜索！");
           } else {
           	for(var i in result) {

@@ -48,27 +48,40 @@ public class GetCitizenAction extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
-		Long danyuan = Long.parseLong(request.getParameter("danyuan"));
+		String danyuan = request.getParameter("danyuan");
 		String location = request.getParameter("location");
 		String name = request.getParameter("name");
+		CitizenDAO citizenDAO = (CitizenDAO) Global.getDAO(CitizenDAO.TAG);
+		
+		List<Citizen> list1 = new ArrayList<Citizen>();
+		List<Citizen> list2 = new ArrayList<Citizen>();
+		List<Citizen> list3 = new ArrayList<Citizen>();
+		
+		if (null != danyuan && danyuan.length()>0) {
 		
 		Citizen danyuanC = new Citizen();
 		danyuanC.setDanyuanNum(danyuan);
-		CitizenDAO citizenDAO = (CitizenDAO) Global.getDAO(CitizenDAO.TAG);
-		List<Citizen> list1 = citizenDAO.findByExample(danyuanC);
+		list1 = citizenDAO.findByExample(danyuanC);
 		
+		}
+		
+		if (null != location && location.length()>0) {
 		Citizen locationC = new Citizen();
 		locationC.setLocation(location);
-		List<Citizen> list2 = citizenDAO.findByExample(locationC);
+		list2 = citizenDAO.findByExample(locationC);
+		}
+		
+		if (null != name && name.length()>0) {
 		Citizen nameCitizen = new Citizen();
 		nameCitizen.setName(name);
-		List<Citizen> list3 = citizenDAO.findByExample(nameCitizen);
+		list3 = citizenDAO.findByExample(nameCitizen);
+		}
 		
 		List<Citizen> resultList = new ArrayList<Citizen>();
-		if (null != list1) {
+		if (list1.size()>0) {
 			resultList = list1;
 		}
-		if (null != list2) {
+		if (list2.size()>0) {
 			if (null != resultList) {
 				for(Citizen itemCitizen : list2) {
 					boolean duplicate = false;
@@ -88,7 +101,8 @@ public class GetCitizenAction extends Action {
 				resultList = list2;
 			}
 		}
-		if (null != list3) {
+		
+		if (list3.size()>0) {
 			if (null != resultList) {
 				for(Citizen itemCitizen : list3) {
 					boolean duplicate = false;
