@@ -63,10 +63,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           location : $("#location").val().trim(),
           name : $("#name").val().trim() 
          },  
-         success : function(data) {  
+         success : function(data) {
           var result = JSON.parse(data);
-          var trStr = '';//动态拼接table  
-          for(var i in result) {
+          var trStr = '';//动态拼接table
+          var errorHint = result.error;  
+          if(typeof(errorHint) != undefined){
+          	alert("没有搜索到符合条件的信息，请重新搜索！");
+          } else {
+          	for(var i in result) {
           	var danyuanR = result[i].danyuan+"";
           	var locationR = result[i].location;
           	var nameR = result[i].name;
@@ -79,11 +83,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  			trStr += '</tr>';  
  			} 
  			$("#tbody").html(trStr);//运用html方法将拼接的table添加到tbody中return;
-           
-         },
-         error: function(err) {  
-    		alert(err);   
-  			}  
+           }
+         }
         });
         };
 	</script>
@@ -93,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div name="searchForm">
 		<div class="centerGroup">
 			<div class="form-group">
-				<input type="text" id="danyuan" class="form-control" placeholder="单元号">
+				<input type="text" id="danyuan" class="form-control" placeholder="单元号(数字)">
 				<input type="text" id="location" class="form-control" placeholder="地址">
 				<input type="text" id="name" class="form-control" placeholder="姓名">
 			</div>

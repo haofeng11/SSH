@@ -66,6 +66,7 @@
             		  
             		<input type="submit" class="btn btn-primary col-sm-12" onclick="formSubmit()" value="登录"/>
             		<input type="reset" class="btn btn-primary col-sm-12" value="取消"/>
+            		<a href="jsp/register.jsp" class="btn btn-primary col-sm-12" role="button" style="margin-top:10px;margin-left:10%">注册账号</a>
             	</div>
             </div>
         </html:form>

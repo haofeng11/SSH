@@ -23,11 +23,8 @@
       scope="request"
       type="com.ssh.struts.action.LoginAction">
       <set-property property="cancellable" value="true" />
+      <forward name="loginFail" path="/jsp/login.jsp" />
       <forward name="loginSuccess" path="/jsp/home.jsp" />
-      <forward name="loginFail" path="/jsp/loginFail.jsp" />
-      
-      
-      
     </action>
     <action
       attribute="registerForm"
@@ -37,8 +34,9 @@
       scope="request"
       type="com.ssh.struts.action.RegisterAction">
       <set-property property="cancellable" value="true" />
-      <forward name="registerSuccess" path="/jsp/login.jsp" />
+      
       <forward name="registerFail" path="/jsp/register.jsp" />
+      <forward name="registerSuccess" path="/jsp/home.jsp" />
     </action>
     <!-- <action
       attribute="searchForm"

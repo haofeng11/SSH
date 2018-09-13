@@ -50,13 +50,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		margin-bottom: 50px;
     		margin-left: 90px;
     	}
-    	body{background: url(img/bkg.jpg) no-repeat;background-size:cover;font-size: 16px;}
+    	body{background: url(img/bkg.jpg) no-repeat;background-size:cover;font-size: 16px;}  
+            .form{background: rgba(255,255,255,0.2);width:400px;margin:100px auto;}  
+
     </style>
 
   </head>
   
   <body>
-  <%=request.getAttribute("message")%><br>
+  
   	<div class="centerGroup">
   		<h2>欢迎使用故土资源局信息系统</h2>
     	<a href="jsp/search.jsp" class="btn btn-primary btn-lg active buttonNav" role="button">查询信息</a>

@@ -71,13 +71,18 @@ public class GetCitizenAction extends Action {
 		if (null != list2) {
 			if (null != resultList) {
 				for(Citizen itemCitizen : list2) {
+					boolean duplicate = false;
 					for (int i = 0; i < resultList.size(); i++) {
-						if (itemCitizen.equals(resultList.get(i))) {
+						if (itemCitizen.sameCittizen(resultList.get(i))) {
+							duplicate=true;
 							break;
 						}
+						
+					}
+					if (!duplicate) {
 						resultList.add(itemCitizen);
 					}
-				
+					
 				}
 			}else {
 				resultList = list2;
@@ -86,13 +91,18 @@ public class GetCitizenAction extends Action {
 		if (null != list3) {
 			if (null != resultList) {
 				for(Citizen itemCitizen : list3) {
+					boolean duplicate = false;
 					for (int i = 0; i < resultList.size(); i++) {
-						if (itemCitizen.equals(resultList.get(i))) {
+						if (itemCitizen.sameCittizen(resultList.get(i))) {
+							duplicate=true;
 							break;
 						}
+						
+					}
+					if (!duplicate) {
 						resultList.add(itemCitizen);
 					}
-				
+					
 				}
 			}else {
 				resultList = list3;
